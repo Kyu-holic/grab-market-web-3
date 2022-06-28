@@ -51,6 +51,16 @@
 24. product의 index.js에서 useParams를 사용하면 App.js의 Route가 parameter(여기서는 :id)를 ProductPage component에 값을 넣어주게 된다.
 
 25. mock server에서 기존 request에서 id값을 추가해주고 products/1이라는 새로운 request를 만들어주고, 거기에 첫번째 농구공 값을 description까지 넣어서 보내준다.
+{
+"products": {
+"id": 1,
+"name": "농구공",
+"price": 100000,
+"seller": "규호",
+"imageUrl": "images/products/basketball1.jpeg",
+"description": "규호가 사용하던 농구공"
+}
+}
 
 26. main의 index.js에서 map함수에서 사용되는 id값은 products의 고유한 id가 아니기 때문에 index에서 id로 바꾼다.
 
