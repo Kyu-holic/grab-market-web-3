@@ -3,11 +3,12 @@ import "./App.css";
 import MainPageComponent from "./MainPage/index";
 import ProductPageComponent from "./ProductPage";
 import UploadPageComponent from "./UploadPage";
-import { Link, Switch, Route } from "react-router-dom";
+import { useHistory, Link, Switch, Route } from "react-router-dom";
 import { Button } from "antd";
 import { DownloadOutlined } from "@ant-design/icons";
 
 function App() {
+  const history = useHistory()
   return (
     <div>
       <div id="header">
@@ -17,7 +18,9 @@ function App() {
           </Link>
           <Button
             size="large"
-            onClick={function(){}}
+            onClick={function(){
+              history.push("/upload")
+            }}
             icon={<DownloadOutlined />}
           >상품 업로드</Button>
         </div>
