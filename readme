@@ -51,16 +51,6 @@
 24. product의 index.js에서 useParams를 사용하면 App.js의 Route가 parameter(여기서는 :id)를 ProductPage component에 값을 넣어주게 된다.
 
 25. mock server에서 기존 request에서 id값을 추가해주고 products/1이라는 새로운 request를 만들어주고, 거기에 첫번째 농구공 값을 description까지 넣어서 보내준다.
-{
-"products": {
-"id": 1,
-"name": "농구공",
-"price": 100000,
-"seller": "규호",
-"imageUrl": "images/products/basketball1.jpeg",
-"description": "규호가 사용하던 농구공"
-}
-}
 
 26. main의 index.js에서 map함수에서 사용되는 id값은 products의 고유한 id가 아니기 때문에 index에서 id로 바꾼다.
 
@@ -109,17 +99,8 @@
     클릭했을 때 uploadPage로 갈 수 있게 history.push 하기
 
 43. productUploadPage에서 antd의 Form을 이용하여 Form 란 작성
-    1) upload-container로 감싸주고 그 아래에 Form과 Form.Item으로 작성
-    2) Form-Item 안에는 카메라 이미지 사진과 이미지를 업로드해주세요 라는 텍스트 작성
-    3) antd의 Divider 불러와서 upload Form.item 아래에 넣기
-    4) 각 Form-Item 에는 label을 넣어주고 classname은 upload-label로 통일
-    5) price는 InputNumber로 작성 속성으로는 defaultValue={}
-    6) Textarea는 Input.TextArea로 작성 showCount, maxLength={}
-    7) 버튼은 Button / htmlType="submit" 꼭꼭 써주기
     
 44. Form.Item에는 이미지와 텍스트 넣기
-
-<===========우선 여기까지 프론트 작성 ==============>
 
 45. server 구축해준 다음 여기로 다시 돌아와서 main의 axios 부분의 postman 주소를 지워주고 http://localhost:8080/products로 변경
 
@@ -146,6 +127,8 @@
 55. dayjs(product.createAt).fromNow()로 변경
 
 56. dayjs를 product-date classname을 준 다음 css 변경
+
+서버로 갔다가 돌아오기
 
 57. antd의 속성으로 Upload를 사용하면 api 서버랑 통신을 주고받을 수 있게 해줌
     <Upload>로 upload-img-placeholder 부분을 감싸주고

@@ -1,6 +1,6 @@
 import "./index.css";
-import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 
 function ProductPage() {
@@ -9,18 +9,19 @@ function ProductPage() {
   useEffect(function () {
     axios
       .get(
-        `https://845da0c8-ed3c-4656-8a87-12d65bded7fb.mock.pstmn.io/products/${id}`
+        `http://localhost:8080/products/${id}`
       )
-      .then(function (result) {
+      .then((result) => {
         setProduct(result.data.product);
       })
-      .catch(function (error) {
-        console.error("에러 발생 : ", error);
+      .catch((err) => {
+        console.error("에러 발생 : ", err);
       });
   }, []);
+  console.log(product);
 
   if (product === null) {
-    return <h1>상품 정보를 불러오고 있습니다..</h1>;
+    return <h1>상품 정보를 받고 있습니다...</h1>;
   }
 
   return (
@@ -30,12 +31,12 @@ function ProductPage() {
       </div>
       <div id="profile-box">
         <img src="/images/icons/avatar.png" />
-        <span>{product.seller}</span>
+        <div id="product-seller">{product.seller}</div>
       </div>
       <div id="contents-box">
         <div id="name">{product.name}</div>
-        <div id="price">{product.price}원</div>
-        <div id="createdAt">2022년 6월 28일</div>
+        <div id="price">{product.price}</div>
+        <div id="createdAt">2022년 6월 30일</div>
         <div id="description">{product.description}</div>
       </div>
     </div>

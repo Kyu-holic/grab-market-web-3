@@ -11,10 +11,8 @@ body,
   line-height: normal;
 }
 
-/* Header */
 #header {
   height: 64px;
-  /* background-color: #000; */
   display: flex;
   justify-content: center;
   border-bottom: 1px solid gray;
@@ -23,7 +21,6 @@ body,
 #header-area {
   width: 1024px;
   height: 100%;
-  /* background-color: orange; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -34,7 +31,13 @@ body,
   height: 36px;
 }
 
-/* Footer */
+#body {
+  height: 100vh;
+  width: 1024px;
+  margin: 0 auto;
+  padding-bottom: 24px;
+}
+
 #footer {
   height: 200px;
   background-color: rgb(230, 230, 230);
